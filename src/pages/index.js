@@ -10,10 +10,12 @@ export default function Home() {
    const [bg, setBg] = useState("bg-black")
 
    const playing = () => {
+      
       setShowButton("-")
       setShowText(1)
       const audio = new Audio('/sfx/typing.mp3');
       audio.play();
+
    };
 
    const buttonBaik = () => {
@@ -37,23 +39,42 @@ export default function Home() {
       setBg("bg-[url('/img/bedroom.png')]")
       setShowButton("-")
       setShowText("hias")
+
       const audio = new Audio('/sfx/door.mp3');
       audio.play();
+
+      const audio2 = new Audio('/sfx/hbd-jamrud-acoustic.mp3');
+      audio2.play();
+      audio2.currentTime = 8
+
+      setTimeout(() => {
+         audio2.pause();
+      }, 10000);
    };
 
    const buttonFinal = () => {
+
       setShowKado("")
       setBg("bg-[url('/img/bedroom.png')]")
       setShowButton("-")
       setShowText("final")
+
       const audio = new Audio('/sfx/blast.mp3');
       audio.play();
 
       setTimeout(() => {
+
          const audio2 = new Audio('/sfx/hbd.mp3');
          audio2.play();
-         audio2.loop = true;
+         audio2.loop = true
+         
       }, 1500);
+
+      setTimeout(() => {
+
+        location.reload()
+         
+      }, 180000);
       
    };
 
